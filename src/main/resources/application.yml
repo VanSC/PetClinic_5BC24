@@ -1,0 +1,55 @@
+# ===============================
+# = PARAMETERS
+# ===============================
+
+# https://docs.spring.io/spring-boot/docs/current/reference/html/application-properties.html#application-properties.core
+
+# ===============================
+# = DATA SOURCE
+# ===============================
+# UNIX or MAC
+spring:
+  datasource :
+    url : jdbc:mysql://localhost:3306/PETCLINIC_DB?useSSL=false
+    # Windoows
+    # url : jdbc:mysql://localhost:3306/PETCLINIC_DB?useSSL=false&serverTimezone=UTC
+    username : root
+    password :
+
+    platform : mysql
+    initialization-mode : always
+
+  jpa:
+    generate-ddl : false
+    hibernate.ddl-auto : none
+    open-in-view : false
+    show-sql : true
+    # The SQL dialect makes Hibernate generate better SQL for the chosen database
+    properties :
+      hibernate :
+        dialect : org.hibernate.dialect.MySQL5Dialect
+
+
+
+  data :
+    rest :
+      basePath : /api
+
+logging :
+  # DEBUG, INFO , ERROR
+  level :
+    root : INFO
+
+  # Output to a temp_folder/file
+  file :
+    name : /Users/jgomez/temp/application.log
+
+  #pattern :
+  # Logging pattern for the console : IT IS OK
+  # console : %d{yy-MM-dd HH:mm:ss} - %logger{36} - %msg%n
+  
+  # Logging pattern for file : DONT WORK, DISABLE WRITE FILE LOG
+  # file : %d{yyyy-MM-dd HH:mm:ss} [%thread] %-5level %logger{36} - %msg%
+
+server :
+  port : 8080

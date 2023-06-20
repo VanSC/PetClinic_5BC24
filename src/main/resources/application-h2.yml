@@ -1,0 +1,52 @@
+# ===============================
+# = PARAMETERS
+# ===============================
+
+# https://docs.spring.io/spring-boot/docs/current/reference/html/application-properties.html#application-properties.core
+
+# ===============================
+# = DATA SOURCE
+# ===============================
+# UNIX or MAC
+spring:
+  datasource:
+    url: jdbc:h2:mem:testdb;MODE=Oracle;DB_CLOSE_DELAY=-1;DB_CLOSE_ON_EXIT=false
+    username: sa
+    password: sa
+    data: classpath:data.sql
+  jpa:
+    database: h2
+    show-sql: true
+    generate-ddl: true
+    properties:
+      hibernate:
+        ddl_auto: create-drop
+        format_sql: true
+        dialect: org.hibernate.dialect.H2Dialect
+    defer-datasource-initialization: true
+  h2:
+    console:
+      enabled: true
+      path: /h2
+  data :
+    rest :
+      basePath : /api
+
+logging :
+  # DEBUG, INFO , ERROR
+  level :
+    root : INFO
+
+  # Output to a temp_folder/file
+  file :
+    name : /Users/jgomez/temp/application.log
+
+  #pattern :
+  # Logging pattern for the console : IT IS OK
+  # console : %d{yy-MM-dd HH:mm:ss} - %logger{36} - %msg%n
+
+  # Logging pattern for file : DONT WORK, DISABLE WRITE FILE LOG
+  # file : %d{yyyy-MM-dd HH:mm:ss} [%thread] %-5level %logger{36} - %msg%
+
+server :
+  port : 8080
