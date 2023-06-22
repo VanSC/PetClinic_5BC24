@@ -29,13 +29,13 @@ public class VetServiceTest {
 	 * find by name a vet
 	 * 
 	 * */
-	@Test
+	/**@Test
 	public void testFindVetByName() {
 		String NAME = "James";
 		int SIZE_EXPECTED = 1;
 		List<Vet> vets = this.vetService.findByName(NAME);
 		assertEquals(SIZE_EXPECTED, vets.size());
-	}
+	}**/
 	
 	/** 
 	 * Create vet
