@@ -131,10 +131,10 @@ class VetControllerTest {
 	@Test
 	void testFindByName() throws Exception {
 			
-		String NAME_VET = "Manuel";
-	    String LAST_NAME_VET = "Arcangel";
+		String NAME_VET = "James";
+	    String LAST_NAME_VET = "Carter";
 
-	    mockMvc.perform(get("/vetsname/Manuel"))
+	    mockMvc.perform(get("/vetsname/James"))
 	            .andExpect(content().contentType(MediaType.APPLICATION_JSON))
 	            .andExpect(status().isOk())
 	            .andDo(print())
