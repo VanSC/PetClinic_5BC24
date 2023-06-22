@@ -83,8 +83,8 @@ class VetControllerTest {
 	void testUpdateVetById() throws Exception {
 	    // Datos del veterinario a actualizar
 	    int VET_ID = 5;
-	    String UPDATED_NAME = "Vanessa";
-	    String UPDATED_LASTNAME = "Surco";
+	    String UPDATED_NAME = "Alexa";
+	    String UPDATED_LASTNAME = "Kyle";
 
 	    VetTO updatedVetTo = new VetTO();
 	    updatedVetTo.setId(VET_ID);
@@ -131,10 +131,10 @@ class VetControllerTest {
 	@Test
 	void testFindByName() throws Exception {
 			
-		String NAME_VET = "Alexandro";
-	    String LAST_NAME_VET = "Smith";
+		String NAME_VET = "James";
+	    String LAST_NAME_VET = "Carter";
 
-	    mockMvc.perform(get("/vetsname/Alexandro"))
+	    mockMvc.perform(get("/vetsname/James"))
 	            .andExpect(content().contentType(MediaType.APPLICATION_JSON))
 	            .andExpect(status().isOk())
 	            .andDo(print())
