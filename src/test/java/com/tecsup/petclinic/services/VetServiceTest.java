@@ -31,7 +31,7 @@ public class VetServiceTest {
 	 * */
 	@Test
 	public void testFindVetByName() {
-		String NAME = "Rafael";
+		String NAME = "Manuel";
 		int SIZE_EXPECTED = 1;
 		List<Vet> vets = this.vetService.findByName(NAME);
 		assertEquals(SIZE_EXPECTED, vets.size());
